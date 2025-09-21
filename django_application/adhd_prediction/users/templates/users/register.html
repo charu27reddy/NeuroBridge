@@ -1,0 +1,72 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    body {
+        background: #f5f7fa;
+    }
+    .adhd-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .adhd-header h1 {
+        color: #4a90e2;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    .adhd-header p {
+        color: #7b8a8b;
+        font-size: 1.1rem;
+    }
+    .content-section {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(74,144,226,0.08);
+        padding: 2rem 2.5rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .btn-adhd {
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        transition: background 0.2s;
+    }
+    .btn-adhd:hover {
+        background: #357ab8;
+        color: #fff;
+    }
+    .border-top.pt-3 {
+        text-align: center;
+    }
+</style>
+<div class="adhd-header">
+    <h1>ADHD Connect</h1>
+    <p>Join our supportive community for ADHD awareness, resources, and connection.</p>
+</div>
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4" style="color:#4a90e2;">Create Your ADHD Account</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-adhd btn-block" type="submit">Sign Up</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already have an account?
+            <a class="ml-2" href="{% url 'login' %}" style="color:#4a90e2;font-weight:bold;">Log In</a>
+        </small>
+    </div>
+    <div style="margin-top:1.5rem;text-align:center;">
+        <img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/brain-2029366_1280.png" alt="ADHD Brain" style="width:80px;opacity:0.7;">
+        <p style="color:#7b8a8b;font-size:0.95rem;margin-top:0.5rem;">
+            Empowering individuals with ADHD to thrive together.
+        </p>
+    </div>
+</div>
+{% endblock content %}

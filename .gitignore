@@ -1,0 +1,26 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.swp
+*.sqlite3
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+
+# VS Code
+.vscode/
+
+# Environment
+*.env
+adhd_venv/
+
+# Git LFS large files (if using LFS)
+*.csv filter=lfs diff=lfs merge=lfs -text
+
+
+# dataset 
+adhdata.csv

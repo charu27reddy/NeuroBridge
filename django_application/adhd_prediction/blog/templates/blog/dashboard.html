@@ -1,0 +1,102 @@
+<!-- filepath: c:\Users\deeks\major project adhd\django_application\adhd_prediction\blog\templates\blog\dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADHD Connect Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+        }
+        .adhd-logo {
+            width: 500px;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        h1 {
+            color: #4a90e2;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            color: #7b8a8b;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .dashboard-buttons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .dashboard-btn {
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+        }
+        .dashboard-btn.eeg { background: #f39c12; }
+        .dashboard-btn.community { background: #4a90e2; }
+        .dashboard-btn.articles { background: #16a085; }
+        .dashboard-btn.agent { background: #e74c3c; }
+        .dashboard-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            text-decoration: none;
+            color: #fff;
+        }
+        @media (max-width: 700px) {
+            .dashboard-buttons {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <img src="https://th.bing.com/th/id/OIP.8AKwk_7ggJIhRGac_ccWHQHaE8?w=275&h=183&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3" 
+     alt="ADHD Brain" 
+     class="adhd-logo"
+     width="900" 
+     height="200">
+
+        <h1>ADHD Connect</h1>
+        <div class="subtitle">
+            Welcome! Choose your destination below.<br>
+            <span style="font-size:0.95rem;">Empowering individuals with ADHD to thrive together.</span>
+        </div>
+        <div class="dashboard-buttons">
+            <a href="{% url 'eeg_input' %}" class="dashboard-btn eeg">ADHD prediction</a>
+            <a href="{% url 'blog-home' %}" class="dashboard-btn community">ADHD Community</a>
+            <a href="#" class="dashboard-btn articles">Recent articles and research</a>
+            <a href="#" class="dashboard-btn agent">Talk to our  AI agent</a>
+        </div>
+    </div>
+</body>
+</html>
